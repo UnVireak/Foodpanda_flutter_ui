@@ -1017,7 +1017,7 @@ class HomeScreen extends StatelessWidget {
                                             ]),
                                       ),
                                       Positioned(
-                                        bottom: 10,
+                                        bottom:0,
                                         left: 0,
                                         right: 0,
                                         child: Column(
@@ -1085,13 +1085,14 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   Container(
-                    height: 240,
+                    margin: EdgeInsets.symmetric(vertical: 15),
+                    height: 246,
                     width: double.infinity,
                     child: Stack(
                       children: [
                         Image.asset(
                           "assets/images/restaurant_near_u/map.jpg",
-                          height: 240,
+                          height: 280,
                           width: 550,
                         ),
                         ListView.builder(
@@ -1108,7 +1109,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 330,
                                     height: 140,
                                     decoration: BoxDecoration(
-                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      color: Color.fromARGB(255, 198, 69, 69),
                                       borderRadius: BorderRadius.circular(10),
                                       border: Border.all(
                                         color: Color.fromARGB(
@@ -1543,6 +1544,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Column(
                             mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.max,
                             children: [
                               Container(
                                 margin: EdgeInsets.only(
@@ -1559,7 +1561,7 @@ class HomeScreen extends StatelessWidget {
                                 height: 10,
                               ),
                               Container(
-                                margin: EdgeInsets.only(left: 20, right: 32, top: 0),
+                                margin: EdgeInsets.only(left: 18, right: 18, top: 0),
                                 child: Text(
                                   "when you refer a friend",
                                   style: TextStyle(
@@ -1573,7 +1575,7 @@ class HomeScreen extends StatelessWidget {
                          Container(
                               height: double.infinity,
                               width: 80,
-                              margin: EdgeInsets.only(left: 74.4, top: 0, right: 0),
+                              margin: EdgeInsets.only(left: 72, top: 0, right: 0),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(6),
                                 image: DecorationImage(
@@ -1613,7 +1615,7 @@ class HomeScreen extends StatelessWidget {
                             children: [
                               Container(
                                 margin: EdgeInsets.only(
-                                    left: 20, right: 39, top: 16,bottom: 0),
+                                    left: 20, right: 36, top: 16,bottom: 0),
                                 child: Text(
                                   "Try panda reward!",
                                   style: TextStyle(
@@ -1626,7 +1628,8 @@ class HomeScreen extends StatelessWidget {
                                 height: 10,
                               ),
                               Container(
-                                margin: EdgeInsets.only(left: 22, right: 13, top: 0),
+                                margin: EdgeInsets.only(left: 16, right: 13, top: 0),
+                                
                                 child: Text(
                                   "Earn point end win prizes",
                                   style: TextStyle(
