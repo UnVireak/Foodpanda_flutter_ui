@@ -11,8 +11,7 @@ import 'sliverAppbar/myflexiableappbar.dart';
 // import 'sliverAppbar/myappbar.dart';
 
 class HomeScreen extends StatelessWidget {
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
-  // const HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -85,53 +84,41 @@ class HomeScreen extends StatelessWidget {
     ];
     // var shop_2_outlined = Icons.shop_2_outlined;
     return Scaffold(
-      key: _scaffoldKey,
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.pink,
-              ),
-              child: CircleAvatar(
-                radius: 24,
-                backgroundImage: NetworkImage(
-                    'https://pics.craiyon.com/2023-05-30/eaab7f873e324b3e8f41f5aba2c2aeb2.webp'),
-              ),
-            ),
-            ListTile(
-              title: Text(
-                'Setting',
-                style: TextStyle(color: Colors.black),
-              ),
-              leading: Icon(Icons.settings),
-            ),
-            ListTile(
-              title: Text(
-                'Help center',
-                style: TextStyle(color: Colors.black),
-              ),
-              leading: Icon(Icons.help_center),
-            ),
-            ListTile(
-              title: Text(
-                'More',
-                style: TextStyle(color: Colors.black),
-              ),
-              leading: Icon(Icons.more_horiz),
-            ),
-            ListTile(
-              title: Text(
-                'Sign up or Login ',
-                style: TextStyle(color: Colors.black),
-              ),
-              leading: Icon(Icons.login_outlined),
-            ),
-          ],
-        ),
-      ),
-
+      //  drawer: Drawer(
+      //     child: ListView(
+      //       padding: EdgeInsets.zero,
+      //       children: <Widget>[
+      //         DrawerHeader(
+      //           decoration: BoxDecoration(
+      //             color: Colors.blue,
+      //           ),
+      //           child: Text(
+      //             'Drawer Header',
+      //             style: TextStyle(
+      //               color: Colors.white,
+      //               fontSize: 24,
+      //             ),
+      //           ),
+      //         ),
+      //         ListTile(
+      //           title: Text('Item 1'),
+      //           onTap: () {
+      //             // Add your item 1 action here
+      //             Navigator.pop(context);
+      //           },
+      //         ),
+      //         ListTile(
+      //           title: Text('Item 2'),
+      //           onTap: () {
+      //             // Add your item 2 action here
+      //             Navigator.pop(context);
+      //           },
+      //         ),
+      //         // Add more ListTile widgets for additional items
+      //       ],
+      //     ),
+      // ),
+      // drawer: MyDrawerContent(),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         elevation: 0,
@@ -141,7 +128,7 @@ class HomeScreen extends StatelessWidget {
           ),
           iconSize: 35,
           color: Colors.white,
-          onPressed: () {  _scaffoldKey.currentState!.openDrawer();},
+          onPressed: () {},
         ),
         title: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -166,7 +153,6 @@ class HomeScreen extends StatelessWidget {
             onPressed: () {},
             icon: Icon(Icons.shopping_bag_outlined),
           ),
-          IconButton(onPressed: (){}, icon: Icon(Icons.heart_broken_outlined))
         ],
       ),
       body: CustomScrollView(
@@ -178,7 +164,7 @@ class HomeScreen extends StatelessWidget {
             snap: true,
             expandedHeight: 75.5,
             excludeHeaderSemantics: true,
-            automaticallyImplyLeading: false,
+
             flexibleSpace: FlexibleSpaceBar(background: MyFlexiableAppBar()),
             backgroundColor: Colors.pink,
           ),
@@ -1031,7 +1017,7 @@ class HomeScreen extends StatelessWidget {
                                             ]),
                                       ),
                                       Positioned(
-                                        bottom: 10,
+                                        bottom:0,
                                         left: 0,
                                         right: 0,
                                         child: Column(
@@ -1099,13 +1085,14 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   Container(
-                    height: 240,
+                    margin: EdgeInsets.symmetric(vertical: 15),
+                    height: 246,
                     width: double.infinity,
                     child: Stack(
                       children: [
                         Image.asset(
                           "assets/images/restaurant_near_u/map.jpg",
-                          height: 240,
+                          height: 280,
                           width: 550,
                         ),
                         ListView.builder(
@@ -1122,7 +1109,7 @@ class HomeScreen extends StatelessWidget {
                                     width: 330,
                                     height: 140,
                                     decoration: BoxDecoration(
-                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      color: Color.fromARGB(255, 198, 69, 69),
                                       borderRadius: BorderRadius.circular(10),
                                       border: Border.all(
                                         color: Color.fromARGB(
@@ -1490,15 +1477,16 @@ class HomeScreen extends StatelessWidget {
                                         child: Container(
                                           width: 80,
                                           height: 80,
+
                                           margin: EdgeInsets.only(
                                             top: 0,
                                             bottom: 5,
                                           ),
                                           decoration: BoxDecoration(
-                                              color: Color.fromARGB(
-                                                  255, 244, 243, 243),
+                                              color: Color.fromARGB(255, 244, 243, 243),
                                               borderRadius:
                                                   BorderRadius.circular(10)),
+                                         
                                           child: Padding(
                                             padding: EdgeInsets.all(10),
                                             child: ClipRRect(
@@ -1518,15 +1506,15 @@ class HomeScreen extends StatelessWidget {
                                       //   height: 4,
                                       // ),
                                       Container(
-                                        margin:
-                                            EdgeInsets.only(bottom: 25, top: 5),
-                                        child: Text(
-                                          shop_img[index],
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.bold),
-                                        ),
+                                        margin: EdgeInsets.only(bottom: 25, top: 5),
+                                       child: Text(shop_img[index],
+                                       style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold
+                                       ),
+                                       ),
                                       )
+                                      
                                     ],
                                   ),
                                 ));
@@ -1556,10 +1544,11 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Column(
                             mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.max,
                             children: [
                               Container(
                                 margin: EdgeInsets.only(
-                                    left: 20, right: 40, top: 16, bottom: 0),
+                                    left: 20, right: 40, top: 16,bottom: 0),
                                 child: Text(
                                   "Earn a \$3 voucher",
                                   style: TextStyle(
@@ -1572,8 +1561,7 @@ class HomeScreen extends StatelessWidget {
                                 height: 10,
                               ),
                               Container(
-                                margin: EdgeInsets.only(
-                                    left: 20, right: 32, top: 0),
+                                margin: EdgeInsets.only(left: 18, right: 18, top: 0),
                                 child: Text(
                                   "when you refer a friend",
                                   style: TextStyle(
@@ -1583,29 +1571,28 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Container(
-                            height: double.infinity,
-                            width: 80,
-                            margin:
-                                EdgeInsets.only(left: 74.4, top: 0, right: 0),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(6),
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/images/earn_a_3/earn_a3.jpg",
+                        
+                         Container(
+                              height: double.infinity,
+                              width: 80,
+                              margin: EdgeInsets.only(left: 72, top: 0, right: 0),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(6),
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    "assets/images/earn_a_3/earn_a3.jpg",
+                                  ),
+                                  fit: BoxFit.cover,
                                 ),
-                                fit: BoxFit.cover,
                               ),
                             ),
-                          ),
+                         
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 0,
-                  ),
-                  Padding(
+            SizedBox(height: 0,),
+            Padding(
                     padding: EdgeInsets.symmetric(vertical: 0, horizontal: 14),
                     child: Container(
                       height: 90,
@@ -1628,7 +1615,7 @@ class HomeScreen extends StatelessWidget {
                             children: [
                               Container(
                                 margin: EdgeInsets.only(
-                                    left: 20, right: 39, top: 16, bottom: 0),
+                                    left: 20, right: 36, top: 16,bottom: 0),
                                 child: Text(
                                   "Try panda reward!",
                                   style: TextStyle(
@@ -1641,8 +1628,8 @@ class HomeScreen extends StatelessWidget {
                                 height: 10,
                               ),
                               Container(
-                                margin: EdgeInsets.only(
-                                    left: 22, right: 13, top: 0),
+                                margin: EdgeInsets.only(left: 16, right: 13, top: 0),
+                                
                                 child: Text(
                                   "Earn point end win prizes",
                                   style: TextStyle(
@@ -1652,28 +1639,27 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Container(
-                            height: double.infinity,
-                            width: 80,
-                            margin:
-                                EdgeInsets.only(left: 74.4, top: 0, right: 0),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(6),
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/images/try_panda_reward/try_panda_reward.jpg",
+                       
+                         Container(
+                              height: double.infinity,
+                              width: 80,
+                              margin: EdgeInsets.only(left: 74.4, top: 0, right: 0),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(6),
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    "assets/images/try_panda_reward/try_panda_reward.jpg",
+                                  ),
+                                  fit: BoxFit.cover,
                                 ),
-                                fit: BoxFit.cover,
                               ),
                             ),
-                          ),
+                         
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  SizedBox(height: 20,),
                 ],
               ),
             ),
