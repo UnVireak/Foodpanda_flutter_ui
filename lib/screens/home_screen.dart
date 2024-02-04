@@ -12,8 +12,8 @@ import 'sliverAppbar/myflexiableappbar.dart';
 // import 'sliverAppbar/myappbar.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
+  // const HomeScreen({super.key});
+final _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     List foods2 = ["Chicken Burger", "Cheese Pizza"];
@@ -84,42 +84,53 @@ class HomeScreen extends StatelessWidget {
       "Bakery"
     ];
     // var shop_2_outlined = Icons.shop_2_outlined;
-    return Scaffold(
-      //  drawer: Drawer(
-      //     child: ListView(
-      //       padding: EdgeInsets.zero,
-      //       children: <Widget>[
-      //         DrawerHeader(
-      //           decoration: BoxDecoration(
-      //             color: Colors.blue,
-      //           ),
-      //           child: Text(
-      //             'Drawer Header',
-      //             style: TextStyle(
-      //               color: Colors.white,
-      //               fontSize: 24,
-      //             ),
-      //           ),
-      //         ),
-      //         ListTile(
-      //           title: Text('Item 1'),
-      //           onTap: () {
-      //             // Add your item 1 action here
-      //             Navigator.pop(context);
-      //           },
-      //         ),
-      //         ListTile(
-      //           title: Text('Item 2'),
-      //           onTap: () {
-      //             // Add your item 2 action here
-      //             Navigator.pop(context);
-      //           },
-      //         ),
-      //         // Add more ListTile widgets for additional items
-      //       ],
-      //     ),
-      // ),
-      // drawer: MyDrawerContent(),
+    return Scaffold( 
+      key: _scaffoldKey,
+            drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.pink,
+              ),
+              child: CircleAvatar(
+                radius: 24,
+                backgroundImage: NetworkImage(
+                    'https://pics.craiyon.com/2023-05-30/eaab7f873e324b3e8f41f5aba2c2aeb2.webp'),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'Setting',
+                style: TextStyle(color: Colors.black),
+              ),
+              leading: Icon(Icons.settings),
+            ),
+            ListTile(
+              title: Text(
+                'Help center',
+                style: TextStyle(color: Colors.black),
+              ),
+              leading: Icon(Icons.help_center),
+            ),
+            ListTile(
+              title: Text(
+                'More',
+                style: TextStyle(color: Colors.black),
+              ),
+              leading: Icon(Icons.more_horiz),
+            ),
+            ListTile(
+              title: Text(
+                'Sign up or Login ',
+                style: TextStyle(color: Colors.black),
+              ),
+              leading: Icon(Icons.login_outlined),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         elevation: 0,
@@ -129,7 +140,7 @@ class HomeScreen extends StatelessWidget {
           ),
           iconSize: 35,
           color: Colors.white,
-          onPressed: () {},
+          onPressed: () {_scaffoldKey.currentState!.openDrawer();},
         ),
         title: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -165,7 +176,7 @@ class HomeScreen extends StatelessWidget {
             snap: true,
             expandedHeight: 75.5,
             excludeHeaderSemantics: true,
-
+automaticallyImplyLeading: false,
             flexibleSpace: FlexibleSpaceBar(background: MyFlexiableAppBar()),
             backgroundColor: Colors.pink,
           ),
