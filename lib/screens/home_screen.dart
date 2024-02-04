@@ -6,6 +6,7 @@
 import 'dart:ffi';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:food_fanda_clone/screens/nextscreen.dart';
 // import 'sliverAppbar/sliverAppbar.dart';
 import 'sliverAppbar/myflexiableappbar.dart';
 // import 'sliverAppbar/myappbar.dart';
@@ -288,47 +289,54 @@ class HomeScreen extends StatelessWidget {
                                       width: 1, // Border width
                                     ),
                                   ),
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        bottom: 0,
-                                        right: 0,
-                                        child: Image.asset(
-                                          "assets/images/bottle.jpg",
-                                          width: 130,
+                                  child:GestureDetector(
+                                    onTap: (){
+                                      Navigator.of(context).push(MaterialPageRoute(
+                                          builder: (builder)=>Groceries()
+                                      ));
+                                    },
+                                    child: Stack(
+                                      children: [
+                                        Positioned(
+                                          bottom: 0,
+                                          right: 0,
+                                          child: Image.asset(
+                                            "assets/images/bottle.jpg",
+                                            width: 130,
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 10, vertical: 10),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              "Groceries",
-                                              style: TextStyle(
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold,
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 10, vertical: 10),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                "Groceries",
+                                                style: TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
                                               ),
-                                            ),
-                                            SizedBox(
-                                              height: 5,
-                                            ),
-                                            Text(
-                                              "Lucky, AEON, Chip",
-                                              style: TextStyle(
-                                                  color: Colors.black),
-                                            ),
-                                            Text(
-                                              "Mong, Big C & more",
-                                              style: TextStyle(
-                                                  color: Colors.black),
-                                            )
-                                          ],
+                                              SizedBox(
+                                                height: 5,
+                                              ),
+                                              Text(
+                                                "Lucky, AEON, Chip",
+                                                style: TextStyle(
+                                                    color: Colors.black),
+                                              ),
+                                              Text(
+                                                "Mong, Big C & more",
+                                                style: TextStyle(
+                                                    color: Colors.black),
+                                              )
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],
