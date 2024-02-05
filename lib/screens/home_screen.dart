@@ -7,6 +7,7 @@ import 'dart:ffi';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:food_fanda_clone/screens/nextscreen.dart';
+import 'package:food_fanda_clone/screens/pick_up/pickUp_screen.dart';
 // import 'sliverAppbar/sliverAppbar.dart';
 import 'sliverAppbar/myflexiableappbar.dart';
 // import 'sliverAppbar/myappbar.dart';
@@ -372,7 +373,14 @@ automaticallyImplyLeading: false,
                                           .withOpacity(0.09), // Border color
                                       width: 1, // Border width
                                     ),
+                                    
                                   ),
+                                     child:GestureDetector(
+                                    onTap: (){
+                                      Navigator.of(context).push(MaterialPageRoute(
+                                          builder: (builder)=> PickUpScreen()
+                                      ));
+                                    },
                                   child: Stack(
                                     children: [
                                       Positioned(
@@ -409,6 +417,7 @@ automaticallyImplyLeading: false,
                                         ),
                                       ),
                                     ],
+                                  ),
                                   ),
                                 ),
                                 SizedBox(
