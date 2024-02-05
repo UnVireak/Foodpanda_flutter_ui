@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class SliverPickUpScreen extends StatelessWidget {
   final double appBarHeight = 66.0;
 
@@ -21,13 +21,13 @@ class SliverPickUpScreen extends StatelessWidget {
                 Expanded(
                   child: Container(
                     height: 70,
-                    color: Colors.pink,
+                    color: const Color.fromARGB(255, 255, 255, 255),
                     child: Padding(
                       padding: const EdgeInsets.all(7),
                       child: TextFormField(
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.symmetric(vertical: 5.0),
-                          fillColor: Colors.white,
+                          fillColor: const Color.fromARGB(255, 234, 230, 230),
                           filled: true,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
@@ -40,14 +40,15 @@ class SliverPickUpScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                IconButton(onPressed: (){}, icon: Icon(Icons.filter_2_outlined))
+                IconButton(onPressed: (){}, icon: FaIcon(FontAwesomeIcons.sliders, 
+                color: Colors.pink,),)
               ],
             ),
           ),
         ),
       ),
       decoration: BoxDecoration(
-        color: Colors.pink,
+        color: const Color.fromARGB(255, 255, 255, 255),
       ),
     );
   }

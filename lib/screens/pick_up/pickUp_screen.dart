@@ -18,7 +18,7 @@ class PickUpScreen extends StatelessWidget {
           color: Colors.white,
           onPressed: () {
             // _scaffoldKey.currentState!.openDrawer();
-            },
+          },
         ),
         title: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -45,22 +45,74 @@ class PickUpScreen extends StatelessWidget {
           ),
         ],
       ),
-
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-              
             pinned: false,
             floating:
                 true, // Set to true to hide FlexibleSpaceBar when scrolling up
             snap: true,
             expandedHeight: 75.5,
             excludeHeaderSemantics: true,
-automaticallyImplyLeading: false,
+            automaticallyImplyLeading: false,
             flexibleSpace: FlexibleSpaceBar(background: SliverPickUpScreen()),
             backgroundColor: Colors.pink,
           ),
-         
+
+          SliverToBoxAdapter(
+            child: SingleChildScrollView(
+              child: Column(
+                 crossAxisAlignment: CrossAxisAlignment.center,
+                 children: [
+
+                  Container(
+                    width: double.infinity,
+                    height: 200,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(55, 233, 30, 98)
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                      Text(" 🧧✨"),
+                      SizedBox(width: 200,),
+                       
+                        
+                    // SizedBox(width: 10,),
+                    //   Image.asset("assets/images/pick_up_screen/pandalogo.jpg")
+                    ],
+                    ),
+                  ),
+                   Padding(
+                    padding: EdgeInsets.only( bottom: 0),
+                    child: Container(
+                      height: 60,
+                      width: double.infinity,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      child: Padding(
+                        padding:
+                            const EdgeInsets.only(left: 20, top: 23, bottom: 5),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+
+                            ),
+
+                            Text(
+                              "Your daily deals",
+                              style: TextStyle(
+                                  fontSize: 22, fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                 ],
+              ),
+            ),
+          )
         ],
       ),
     );

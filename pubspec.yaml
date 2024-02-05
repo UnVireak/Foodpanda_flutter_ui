@@ -69,6 +69,7 @@ flutter:
     - assets/images/shop/
     - assets/images/earn_a_3/
     - assets/images/try_panda_reward/
+    - assets/images/pick_up_screen/gongXiFaCaiLogo/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
