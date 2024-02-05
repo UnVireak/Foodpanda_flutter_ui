@@ -305,7 +305,8 @@ automaticallyImplyLeading: false,
                                     onTap: (){
                                       Navigator.of(context).push(MaterialPageRoute(
                                           builder: (builder)=>Groceries()
-                                      ));
+                                      ),
+                                      );
                                     },
                                     child: Stack(
                                       children: [
@@ -848,37 +849,52 @@ automaticallyImplyLeading: false,
                             decoration: BoxDecoration(
                               color: cuisinesColor[index],
                               borderRadius: BorderRadius.circular(10),
+                              
                             ),
-                            child: Padding(
-                              padding:
-                                  EdgeInsets.only(left: 0, right: 0, bottom: 0),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(10),
-                                      topRight: Radius.circular(10),
+                            
+                            child: GestureDetector(
+                                onTap: (){
+                                      Navigator.of(context).push(MaterialPageRoute(
+                                          builder: (builder)=>Groceries()
+                                      ),
+                                      );
+                                    },
+                              child: Padding(
+                                padding:
+                                    EdgeInsets.only(left: 0, right: 0, bottom: 0),
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                     
+                                      
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(10),
+                                        topRight: Radius.circular(10),
+                                      ),
+                                      child: Image.asset(
+                                        "assets/images/${cuisines1[index]}.jpg",
+                                        height: 90,
+                                        width: MediaQuery.of(context).size.width /
+                                            1.4,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
-                                    child: Image.asset(
-                                      "assets/images/${cuisines1[index]}.jpg",
-                                      height: 90,
-                                      width: MediaQuery.of(context).size.width /
-                                          1.4,
-                                      fit: BoxFit.cover,
+                                    Text(
+                                      cuisines1[index],
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    cuisines1[index],
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                ],
+                              
+                                    
+                                  ],
+                                ),
                               ),
                             ),
+                            
                           );
                         },
                       ),
