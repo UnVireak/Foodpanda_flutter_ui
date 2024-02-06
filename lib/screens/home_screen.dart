@@ -6,6 +6,7 @@
 import 'dart:ffi';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:food_fanda_clone/detailsPage/detail_food_delivery.dart';
 import 'package:food_fanda_clone/screens/nextscreen.dart';
 import 'package:food_fanda_clone/screens/pick_up/pickUp_screen.dart';
 
@@ -16,7 +17,7 @@ import 'sliverAppbar/myflexiableappbar.dart';
 
 class HomeScreen extends StatelessWidget {
   // const HomeScreen({super.key});
-final _scaffoldKey = GlobalKey<ScaffoldState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     List foods2 = ["Chicken Burger", "Cheese Pizza"];
@@ -87,9 +88,9 @@ final _scaffoldKey = GlobalKey<ScaffoldState>();
       "Bakery"
     ];
     // var shop_2_outlined = Icons.shop_2_outlined;
-    return Scaffold( 
+    return Scaffold(
       key: _scaffoldKey,
-            drawer: Drawer(
+      drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -143,7 +144,9 @@ final _scaffoldKey = GlobalKey<ScaffoldState>();
           ),
           iconSize: 35,
           color: Colors.white,
-          onPressed: () {_scaffoldKey.currentState!.openDrawer();},
+          onPressed: () {
+            _scaffoldKey.currentState!.openDrawer();
+          },
         ),
         title: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -164,11 +167,12 @@ final _scaffoldKey = GlobalKey<ScaffoldState>();
         ),
         backgroundColor: Colors.pink,
         actions: [
-            IconButton(
+          IconButton(
             onPressed: () {},
-             icon: FaIcon(FontAwesomeIcons.heart,
-          ),
+            icon: FaIcon(
+              FontAwesomeIcons.heart,
             ),
+          ),
           IconButton(
             onPressed: () {},
             icon: Icon(Icons.shopping_bag_outlined),
@@ -184,7 +188,7 @@ final _scaffoldKey = GlobalKey<ScaffoldState>();
             snap: true,
             expandedHeight: 75.5,
             excludeHeaderSemantics: true,
-automaticallyImplyLeading: false,
+            automaticallyImplyLeading: false,
             flexibleSpace: FlexibleSpaceBar(background: MyFlexiableAppBar()),
             backgroundColor: Colors.pink,
           ),
@@ -218,59 +222,66 @@ automaticallyImplyLeading: false,
                   //     ),
                   //   ),
                   // ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                    child: Container(
-                      height: 200,
-                      width: double.infinity,
-                      margin: EdgeInsets.only(
-                        left: 10,
-                        right: 10,
-                        top: 10,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(
-                          color: Color.fromARGB(101, 0, 0, 0)
-                              .withOpacity(0.09), // Border color
-                          width: 1, // Border width
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DetailFoodScreen()));
+                    },
+                    child: Padding(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                      child: Container(
+                        height: 200,
+                        width: double.infinity,
+                        margin: EdgeInsets.only(
+                          left: 10,
+                          right: 10,
+                          top: 10,
                         ),
-                      ),
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            bottom: 0,
-                            right: 0,
-                            child: Image.asset(
-                              "assets/images/panda.jpg",
-                              width: 200,
-                            ),
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Color.fromARGB(101, 0, 0, 0)
+                                .withOpacity(0.09), // Border color
+                            width: 1, // Border width
                           ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Food delivery",
-                                  style: TextStyle(
-                                    fontSize: 27,
-                                    fontWeight: FontWeight.bold,
+                        ),
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              bottom: 0,
+                              right: 0,
+                              child: Image.asset(
+                                "assets/images/panda.jpg",
+                                width: 200,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Food delivery",
+                                    style: TextStyle(
+                                      fontSize: 27,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text(
-                                  "Order food you love",
-                                  style: TextStyle(color: Colors.black),
-                                )
-                              ],
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    "Order food you love",
+                                    style: TextStyle(color: Colors.black),
+                                  )
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -308,11 +319,11 @@ automaticallyImplyLeading: false,
                                       width: 1, // Border width
                                     ),
                                   ),
-                                  child:GestureDetector(
-                                    onTap: (){
-                                      Navigator.of(context).push(MaterialPageRoute(
-                                          builder: (builder)=>Groceries()
-                                      ),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (builder) => Groceries()),
                                       );
                                     },
                                     child: Stack(
@@ -381,51 +392,51 @@ automaticallyImplyLeading: false,
                                           .withOpacity(0.09), // Border color
                                       width: 1, // Border width
                                     ),
-                                    
                                   ),
-                                     child:GestureDetector(
-                                    onTap: (){
-                                      Navigator.of(context).push(MaterialPageRoute(
-                                          builder: (builder)=> PickUpScreen()
-                                      ));
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (builder) =>
+                                                  PickUpScreen()));
                                     },
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        bottom: 0,
-                                        right: 0,
-                                        child: Image.asset(
-                                          "assets/images/pickup.jpg",
-                                          width: 120,
+                                    child: Stack(
+                                      children: [
+                                        Positioned(
+                                          bottom: 0,
+                                          right: 0,
+                                          child: Image.asset(
+                                            "assets/images/pickup.jpg",
+                                            width: 120,
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 10, vertical: 10),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              "Pick-up",
-                                              style: TextStyle(
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold,
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 10, vertical: 10),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                "Pick-up",
+                                                style: TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
                                               ),
-                                            ),
-                                            SizedBox(
-                                              height: 5,
-                                            ),
-                                            Text(
-                                              "Up to 50% off",
-                                              style: TextStyle(
-                                                  color: Colors.black),
-                                            ),
-                                          ],
+                                              SizedBox(
+                                                height: 5,
+                                              ),
+                                              Text(
+                                                "Up to 50% off",
+                                                style: TextStyle(
+                                                    color: Colors.black),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
@@ -747,56 +758,56 @@ automaticallyImplyLeading: false,
                                                             .symmetric(
                                                                 vertical: 4),
                                                         child: Column(
-                                                            children: [
-                                                              Container(
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: const Color
-                                                                      .fromARGB(
-                                                                      255,
-                                                                      23,
-                                                                      22,
-                                                                      23),
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .only(
-                                                                    // topLeft: Radius.circular(10),
-                                                                    topRight: Radius
-                                                                        .circular(
-                                                                            12),
-                                                                    bottomRight:
-                                                                        Radius.circular(
-                                                                            12),
-                                                                  ),
+                                                          children: [
+                                                            Container(
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: const Color
+                                                                    .fromARGB(
+                                                                    255,
+                                                                    23,
+                                                                    22,
+                                                                    23),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .only(
+                                                                  // topLeft: Radius.circular(10),
+                                                                  topRight: Radius
+                                                                      .circular(
+                                                                          12),
+                                                                  bottomRight: Radius
+                                                                      .circular(
+                                                                          12),
                                                                 ),
-                                                                child: Padding(
-                                                                  padding: EdgeInsets
-                                                                      .symmetric(
-                                                                          vertical:
-                                                                              7,
-                                                                          horizontal:
-                                                                              8),
-                                                                  child:
-                                                                      Container(
-                                                                    child:
-                                                                        Column(
-                                                                      crossAxisAlignment:
-                                                                          CrossAxisAlignment
-                                                                              .start,
-                                                                      children: [
-                                                                        Text(
-                                                                          "Top restaurant",
-                                                                          style: TextStyle(
-                                                                              color: Colors.white,
-                                                                              fontWeight: FontWeight.bold),
-                                                                        ),
-                                                                      ],
-                                                                    ),
+                                                              ),
+                                                              child: Padding(
+                                                                padding: EdgeInsets
+                                                                    .symmetric(
+                                                                        vertical:
+                                                                            7,
+                                                                        horizontal:
+                                                                            8),
+                                                                child:
+                                                                    Container(
+                                                                  child: Column(
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
+                                                                    children: [
+                                                                      Text(
+                                                                        "Top restaurant",
+                                                                        style: TextStyle(
+                                                                            color:
+                                                                                Colors.white,
+                                                                            fontWeight: FontWeight.bold),
+                                                                      ),
+                                                                    ],
                                                                   ),
                                                                 ),
                                                               ),
-                                                            ],
                                                             ),
+                                                          ],
+                                                        ),
                                                       ),
                                                     ],
                                                   ),
@@ -857,25 +868,29 @@ automaticallyImplyLeading: false,
                             decoration: BoxDecoration(
                               color: cuisinesColor[index],
                               borderRadius: BorderRadius.circular(10),
-                              
                             ),
-                            
+
+                            // child: GestureDetector(
+                            //     onTap: (){
+                            //           Navigator.of(context).push(MaterialPageRoute(
+                            //               builder: (builder)=>Groceries()
+                            //           ),
+                            //           );
+                            //         },
                             child: GestureDetector(
-                                onTap: (){
-                                      Navigator.of(context).push(MaterialPageRoute(
-                                          builder: (builder)=>Groceries()
-                                      ),
-                                      );
-                                    },
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (builder) => Groceries()),
+                                );
+                              },
                               child: Padding(
-                                padding:
-                                    EdgeInsets.only(left: 0, right: 0, bottom: 0),
+                                padding: EdgeInsets.only(
+                                    left: 0, right: 0, bottom: 0),
                                 child: Column(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
-                                     
-                                      
                                     ClipRRect(
                                       borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(10),
@@ -884,8 +899,9 @@ automaticallyImplyLeading: false,
                                       child: Image.asset(
                                         "assets/images/${cuisines1[index]}.jpg",
                                         height: 90,
-                                        width: MediaQuery.of(context).size.width /
-                                            1.4,
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                1.4,
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -896,13 +912,10 @@ automaticallyImplyLeading: false,
                                         fontSize: 16,
                                       ),
                                     ),
-                              
-                                    
                                   ],
                                 ),
                               ),
                             ),
-                            
                           );
                         },
                       ),
@@ -1069,7 +1082,7 @@ automaticallyImplyLeading: false,
                                             ]),
                                       ),
                                       Positioned(
-                                        bottom:0,
+                                        bottom: 0,
                                         left: 0,
                                         right: 0,
                                         child: Column(
@@ -1529,16 +1542,15 @@ automaticallyImplyLeading: false,
                                         child: Container(
                                           width: 80,
                                           height: 80,
-
                                           margin: EdgeInsets.only(
                                             top: 0,
                                             bottom: 5,
                                           ),
                                           decoration: BoxDecoration(
-                                              color: Color.fromARGB(255, 244, 243, 243),
+                                              color: Color.fromARGB(
+                                                  255, 244, 243, 243),
                                               borderRadius:
                                                   BorderRadius.circular(10)),
-                                         
                                           child: Padding(
                                             padding: EdgeInsets.all(10),
                                             child: ClipRRect(
@@ -1558,15 +1570,15 @@ automaticallyImplyLeading: false,
                                       //   height: 4,
                                       // ),
                                       Container(
-                                        margin: EdgeInsets.only(bottom: 25, top: 5),
-                                       child: Text(shop_img[index],
-                                       style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold
-                                       ),
-                                       ),
+                                        margin:
+                                            EdgeInsets.only(bottom: 25, top: 5),
+                                        child: Text(
+                                          shop_img[index],
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold),
+                                        ),
                                       )
-                                      
                                     ],
                                   ),
                                 ));
@@ -1600,7 +1612,7 @@ automaticallyImplyLeading: false,
                             children: [
                               Container(
                                 margin: EdgeInsets.only(
-                                    left: 20, right: 40, top: 16,bottom: 0),
+                                    left: 20, right: 40, top: 16, bottom: 0),
                                 child: Text(
                                   "Earn a \$3 voucher",
                                   style: TextStyle(
@@ -1613,7 +1625,8 @@ automaticallyImplyLeading: false,
                                 height: 10,
                               ),
                               Container(
-                                margin: EdgeInsets.only(left: 18, right: 18, top: 0),
+                                margin: EdgeInsets.only(
+                                    left: 18, right: 18, top: 0),
                                 child: Text(
                                   "when you refer a friend",
                                   style: TextStyle(
@@ -1623,28 +1636,28 @@ automaticallyImplyLeading: false,
                               ),
                             ],
                           ),
-                        
-                         Container(
-                              height: double.infinity,
-                              width: 80,
-                              margin: EdgeInsets.only(left: 72, top: 0, right: 0),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6),
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    "assets/images/earn_a_3/earn_a3.jpg",
-                                  ),
-                                  fit: BoxFit.cover,
+                          Container(
+                            height: double.infinity,
+                            width: 80,
+                            margin: EdgeInsets.only(left: 72, top: 0, right: 0),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(6),
+                              image: DecorationImage(
+                                image: AssetImage(
+                                  "assets/images/earn_a_3/earn_a3.jpg",
                                 ),
+                                fit: BoxFit.cover,
                               ),
                             ),
-                         
+                          ),
                         ],
                       ),
                     ),
                   ),
-            SizedBox(height: 0,),
-            Padding(
+                  SizedBox(
+                    height: 0,
+                  ),
+                  Padding(
                     padding: EdgeInsets.symmetric(vertical: 0, horizontal: 14),
                     child: Container(
                       height: 90,
@@ -1667,7 +1680,7 @@ automaticallyImplyLeading: false,
                             children: [
                               Container(
                                 margin: EdgeInsets.only(
-                                    left: 20, right: 36, top: 16,bottom: 0),
+                                    left: 20, right: 36, top: 16, bottom: 0),
                                 child: Text(
                                   "Try panda reward!",
                                   style: TextStyle(
@@ -1680,8 +1693,8 @@ automaticallyImplyLeading: false,
                                 height: 10,
                               ),
                               Container(
-                                margin: EdgeInsets.only(left: 16, right: 13, top: 0),
-                                
+                                margin: EdgeInsets.only(
+                                    left: 16, right: 13, top: 0),
                                 child: Text(
                                   "Earn point end win prizes",
                                   style: TextStyle(
@@ -1691,27 +1704,28 @@ automaticallyImplyLeading: false,
                               ),
                             ],
                           ),
-                       
-                         Container(
-                              height: double.infinity,
-                              width: 80,
-                              margin: EdgeInsets.only(left: 74.4, top: 0, right: 0),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6),
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    "assets/images/try_panda_reward/try_panda_reward.jpg",
-                                  ),
-                                  fit: BoxFit.cover,
+                          Container(
+                            height: double.infinity,
+                            width: 80,
+                            margin:
+                                EdgeInsets.only(left: 74.4, top: 0, right: 0),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(6),
+                              image: DecorationImage(
+                                image: AssetImage(
+                                  "assets/images/try_panda_reward/try_panda_reward.jpg",
                                 ),
+                                fit: BoxFit.cover,
                               ),
                             ),
-                         
+                          ),
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                 ],
               ),
             ),

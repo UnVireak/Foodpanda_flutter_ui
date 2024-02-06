@@ -26,7 +26,7 @@ class PickUpScreen extends StatelessWidget {
           iconSize: 35,
           color: Colors.white,
           onPressed: () {
-            // _scaffoldKey.currentState!.openDrawer();
+             Navigator.pop(context);
           },
         ),
         title: Column(
@@ -52,7 +52,9 @@ class PickUpScreen extends StatelessWidget {
             onPressed: () {},
             icon: Icon(Icons.shopping_bag_outlined),
           ),
+          
         ],
+        
       ),
       body: CustomScrollView(
         slivers: [
