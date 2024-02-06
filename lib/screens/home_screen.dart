@@ -1161,7 +1161,7 @@ automaticallyImplyLeading: false,
                                     width: 330,
                                     height: 140,
                                     decoration: BoxDecoration(
-                                      color: Color.fromARGB(255, 198, 69, 69),
+                                      color: Color.fromARGB(255, 255, 255, 255),
                                       borderRadius: BorderRadius.circular(10),
                                       border: Border.all(
                                         color: Color.fromARGB(
