@@ -28,7 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  font_awesome_flutter: ^9.2.0
+  font_awesome_flutter: ^10.7.0
   flutter:
     sdk: flutter
 
@@ -69,6 +69,7 @@ flutter:
     - assets/images/shop/
     - assets/images/earn_a_3/
     - assets/images/try_panda_reward/
+    - assets/images/pick_up_screen/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
