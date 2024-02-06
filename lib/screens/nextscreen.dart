@@ -17,7 +17,7 @@ class Groceries extends StatelessWidget {
       "Flower",
       "Bakery"
     ];
-
+ List popular_shop_img = ["chipMong", "aeon", "lucky", "aeonMax"];
     List your_daily_deal_img = [
       "fav_drink",
       "aba_pay",
@@ -331,17 +331,24 @@ class Groceries extends StatelessWidget {
             ),
 
       Column(
+        
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          
+           Padding(
+             padding: const EdgeInsets.only(left: 10,top: 15),
+             child: Text(
+                          "Shop by Store",
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold),),
+           ),
           Container(
             color: Color.fromARGB(255, 255, 255, 255),
             width: double.infinity,
-            child: SizedBox(
-              child: SizedBox(
-                height:400,
-                child: ListView.builder(
+             child: ListView.builder(
 
                   shrinkWrap: true,
-                  itemCount: shop_img.length,
+                  itemCount: popular_shop_img.length,
                   scrollDirection:Axis.vertical ,
                   itemBuilder: (context, index) {
                     return InkWell(
@@ -382,7 +389,7 @@ class Groceries extends StatelessWidget {
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(30),
                                         child: Image.asset(
-                                          "assets/images/shop/${shop_img[index]}.jpg",
+                                          "assets/images/popular_shop/${popular_shop_img[index]}.jpg",
                                           // fit: BoxFit.fill,
                                           width: 80,
                                           height: 60,
@@ -397,9 +404,9 @@ class Groceries extends StatelessWidget {
                                 SizedBox(width: 25,),
                                 Container(
                                   margin: EdgeInsets.only(bottom: 0, top:30,),
-                                  child: Text(shop_img[index],
+                                  child: Text(popular_shop_img[index],
                                     style: TextStyle(
-                                        fontSize: 25,
+                                        fontSize: 18,
                                         fontWeight: FontWeight.bold
                                     ),
                                   ),
@@ -411,8 +418,6 @@ class Groceries extends StatelessWidget {
                         ));
                   },
                 ),
-              ),
-            ),
           ),
           ],
       ),
