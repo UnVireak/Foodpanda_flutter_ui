@@ -34,14 +34,14 @@ class PickUpScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Selected location",
+              "Phnom Penh",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
             Text(
-              "Phnom Penh",
+              "Pick-up",
               style: TextStyle(color: Colors.white, fontSize: 15),
             ),
           ],
@@ -895,7 +895,9 @@ class PickUpScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Container(
                     width: 378,
                     height: 245,

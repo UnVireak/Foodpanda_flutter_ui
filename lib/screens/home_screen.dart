@@ -8,6 +8,8 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:food_fanda_clone/screens/nextscreen.dart';
 import 'package:food_fanda_clone/screens/pick_up/pickUp_screen.dart';
+
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'sliverAppbar/sliverAppbar.dart';
 import 'sliverAppbar/myflexiableappbar.dart';
 // import 'sliverAppbar/myappbar.dart';
@@ -162,6 +164,11 @@ final _scaffoldKey = GlobalKey<ScaffoldState>();
         ),
         backgroundColor: Colors.pink,
         actions: [
+            IconButton(
+            onPressed: () {},
+             icon: FaIcon(FontAwesomeIcons.heart,
+          ),
+            ),
           IconButton(
             onPressed: () {},
             icon: Icon(Icons.shopping_bag_outlined),
