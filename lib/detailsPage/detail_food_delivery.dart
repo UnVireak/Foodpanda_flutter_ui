@@ -112,14 +112,14 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
             onPressed: () {},
             icon: FaIcon(
               FontAwesomeIcons.heart,
-              color: Colors.pink,
+              color: Color.fromARGB(255, 255, 255, 255),
             ),
           ),
           IconButton(
             onPressed: () {},
             icon: Icon(
               Icons.shopping_bag_outlined,
-              color: Colors.pink,
+              color: const Color.fromARGB(255, 255, 255, 255),
               size: 26,
             ),
           ),
@@ -341,12 +341,13 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                                                           3,
                                                                       vertical:
                                                                           3),
-                                                              child:FaIcon(
-                                            FontAwesomeIcons.heart,
-                                            // color: const Color.fromARGB(
-                                            //     255, 12, 12, 12),
-                                            // size: 15,
-                                          
+                                                              child: FaIcon(
+                                                                  FontAwesomeIcons
+                                                                      .heart,
+                                                                  // color: const Color.fromARGB(
+                                                                  //     255, 12, 12, 12),
+                                                                  // size: 15,
+
                                                                   color: (click ==
                                                                           false)
                                                                       ? Colors

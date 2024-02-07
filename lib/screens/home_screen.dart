@@ -21,8 +21,9 @@ class HomeScreen extends StatelessWidget {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    List foods2 = ["Chicken Burger", "Cheese Pizza"];
+    List foods2 = ["Chicken Burger", "Cheese Pizza", "Bok Lhong", "Seafood Boil"];
     List cuisines1 = ["Pizza", "Milk Tea", "Pasta", "Hot Pot", "Burgers"];
+        List cuisines2 = ["Chicken", "Sushi", "Pho", "Soups", "Salad"];
     List<Color> cuisinesColor = [
       Color.fromARGB(255, 245, 249, 250),
       Color.fromARGB(255, 245, 249, 250),
@@ -100,9 +101,9 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.pink,
               ),
               child: CircleAvatar(
-                radius: 24,
-                backgroundImage: NetworkImage(
-                    'https://pics.craiyon.com/2023-05-30/eaab7f873e324b3e8f41f5aba2c2aeb2.webp'),
+                radius: 30,
+                backgroundImage: AssetImage("assets/images/profile_pic.jpg"),
+                
               ),
             ),
             ListTile(
@@ -546,20 +547,11 @@ class HomeScreen extends StatelessWidget {
                                                 decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(10),
-                                                  // color: Color.fromARGB(255, 255, 255, 255),
-                                                  // boxShadow: [
-                                                  //   BoxShadow(
-                                                  //       color: Colors.black12,
-                                                  //       blurRadius: 4,
-                                                  //       spreadRadius: 2),
-                                                  // ],
+                                                 
                                                 ),
                                                 child: Stack(children: [
                                                   ClipRRect(
-                                                    // borderRadius: BorderRadius.only(
-                                                    //   topLeft: Radius.circular(10),
-                                                    //   topRight: Radius.circular(10),
-                                                    // ),
+                                                   
                                                     borderRadius:
                                                         BorderRadius.circular(10),
                                                     child: Image.asset(
@@ -622,7 +614,7 @@ class HomeScreen extends StatelessWidget {
                                                                               .bold),
                                                                 ),
                                                                 SizedBox(
-                                                                  width: 2,
+                                                                  width: 60,
                                                                 ),
                                                                 Row(
                                                                   children: [
@@ -848,13 +840,7 @@ class HomeScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10),
                               ),
       
-                              // child: GestureDetector(
-                              //     onTap: (){
-                              //           Navigator.of(context).push(MaterialPageRoute(
-                              //               builder: (builder)=>Groceries()
-                              //           ),
-                              //           );
-                              //         },
+                             
                               child: GestureDetector(
                                 onTap: () {
                                   Navigator.of(context).push(
@@ -909,7 +895,7 @@ class HomeScreen extends StatelessWidget {
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
-                          itemCount: cuisines1.length,
+                          itemCount: cuisines2.length,
                           itemBuilder: (context, index) {
                             return Container(
                               width: 100,
@@ -932,7 +918,7 @@ class HomeScreen extends StatelessWidget {
                                         topRight: Radius.circular(10),
                                       ),
                                       child: Image.asset(
-                                        "assets/images/${cuisines1[index]}.jpg",
+                                        "assets/images/${cuisines2[index]}.jpg",
                                         height: 90,
                                         width: MediaQuery.of(context).size.width /
                                             1.4,
@@ -940,7 +926,7 @@ class HomeScreen extends StatelessWidget {
                                       ),
                                     ),
                                     Text(
-                                      cuisines1[index],
+                                      cuisines2[index],
                                       style: TextStyle(
                                         fontWeight: FontWeight.w500,
                                         fontSize: 16,
