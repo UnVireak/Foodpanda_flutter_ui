@@ -26,7 +26,7 @@ class PickUpScreen extends StatelessWidget {
           iconSize: 35,
           color: Colors.white,
           onPressed: () {
-             Navigator.pop(context);
+            Navigator.pop(context);
           },
         ),
         title: Column(
@@ -52,9 +52,7 @@ class PickUpScreen extends StatelessWidget {
             onPressed: () {},
             icon: Icon(Icons.shopping_bag_outlined),
           ),
-          
         ],
-        
       ),
       body: CustomScrollView(
         slivers: [
@@ -161,29 +159,6 @@ class PickUpScreen extends StatelessWidget {
                         }),
                   ),
 
-                  // Padding(
-                  //   padding: EdgeInsets.only(bottom: 0),
-                  //   child: Container(
-                  //     height: 60,
-                  //     width: double.infinity,
-                  //     color: Color.fromARGB(255, 255, 255, 255),
-                  //     child: Padding(
-                  //       padding:
-                  //           const EdgeInsets.only(left: 20, top: 23, bottom: 5),
-                  //       child: Column(
-                  //         crossAxisAlignment: CrossAxisAlignment.start,
-                  //         children: [
-                  //           Container(),
-                  //           Text(
-                  //             "Your daily deals",
-                  //             style: TextStyle(
-                  //                 fontSize: 22, fontWeight: FontWeight.bold),
-                  //           ),
-                  //         ],
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
 
                   Container(
                     height: 210,
@@ -205,7 +180,7 @@ class PickUpScreen extends StatelessWidget {
                           margin: EdgeInsets.only(top: 0),
                           height: 140,
                           decoration: BoxDecoration(
-                              color: Colors.blue,
+                              color: const Color.fromARGB(255, 255, 255, 255),
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(10),
                                 topRight: Radius.circular(10),
@@ -304,20 +279,11 @@ class PickUpScreen extends StatelessWidget {
                                 ),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  // color: Color.fromARGB(255, 255, 255, 255),
-                                  // boxShadow: [
-                                  //   BoxShadow(
-                                  //       color: Colors.black12,
-                                  //       blurRadius: 4,
-                                  //       spreadRadius: 2),
-                                  // ],
+                                 
                                 ),
                                 child: Stack(children: [
                                   ClipRRect(
-                                    // borderRadius: BorderRadius.only(
-                                    //   topLeft: Radius.circular(10),
-                                    //   topRight: Radius.circular(10),
-                                    // ),
+                                 
                                     borderRadius: BorderRadius.circular(10),
                                     child: Image.asset(
                                       "assets/images/${foods2[index]}.jpg",
@@ -567,6 +533,7 @@ class PickUpScreen extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
+
                   Container(
                     height: 140,
                     width: 378,
@@ -831,7 +798,7 @@ class PickUpScreen extends StatelessWidget {
                                     width: 170,
                                   ),
                                   Container(
-                                      margin: EdgeInsets.only(),
+                                      margin: EdgeInsets.only(left: 60),
                                       width: 25,
                                       height: 25,
                                       decoration: BoxDecoration(
@@ -899,243 +866,6 @@ class PickUpScreen extends StatelessWidget {
                   ),
                   SizedBox(
                     height: 10,
-                  ),
-                  Container(
-                    width: 378,
-                    height: 245,
-                    // width: MediaQuery.of(context).size.width / 1.4,
-                    margin: EdgeInsets.only(
-                      left: 10,
-                      top: 5,
-                      bottom: 10,
-                      right: 5,
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Stack(
-                      children: [
-                        ClipRRect(
-                          // borderRadius: BorderRadius.only(
-                          //   topLeft: Radius.circular(10),
-                          //   topRight: Radius.circular(10),
-                          // ),
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image.asset(
-                            "assets/images/Chicken Burger.jpg",
-                            height: 160,
-                            // width: MediaQuery.of(context).size.width /
-                            //     1.4,
-                            width: 378,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Positioned(
-                            bottom: 5,
-                            left: 0,
-                            right: 0,
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                left: 2,
-                              ),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.only(top: 20),
-                                    child: Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "Chicken Burger",
-                                          style: TextStyle(
-                                              fontSize: 17,
-                                              fontWeight: FontWeight.bold,
-                                              color:
-                                                  Color.fromARGB(255, 0, 0, 0)),
-                                        ),
-                                        Text(
-                                          "...",
-                                          style: TextStyle(
-                                              fontSize: 16,
-                                              color:
-                                                  Color.fromARGB(255, 0, 0, 0),
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        SizedBox(
-                                          width: 140,
-                                        ),
-                                        Row(
-                                          children: [
-                                            Icon(
-                                              Icons.star,
-                                              color: Color(0xFFFF2F08),
-                                              size: 20,
-                                            ),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          width: 2,
-                                        ),
-                                        Text(
-                                          "4.7",
-                                          style: TextStyle(
-                                              fontSize: 16,
-                                              color:
-                                                  Color.fromARGB(255, 0, 0, 0),
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        SizedBox(
-                                          width: 2,
-                                        ),
-                                        Text(
-                                          "(500+)",
-                                          style: TextStyle(
-                                              fontSize: 16,
-                                              color: Colors.black45),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Column(
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.only(
-                                            left: 0, right: 272),
-                                        child: Text(r'$ · Tea & Coffee'),
-                                      ),
-                                      SizedBox(
-                                        height: 5,
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.only(
-                                            left: 0, right: 290),
-                                        child: Text(
-                                          "4.9 km away",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black),
-                                        ),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                            )),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 5),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 2),
-                                child: Row(children: [
-                                  Container(
-                                    width: 80,
-                                    decoration: BoxDecoration(
-                                      color: Color.fromARGB(255, 255, 0, 85),
-                                      borderRadius: BorderRadius.only(
-                                        // topLeft: Radius.circular(10),
-                                        topRight: Radius.circular(12),
-                                        bottomRight: Radius.circular(12),
-                                      ),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          vertical: 6, horizontal: 8),
-                                      child: Container(
-                                        child: Row(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              "15% OFF",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 170,
-                                  ),
-                                  Container(
-                                      margin: EdgeInsets.only(),
-                                      width: 25,
-                                      height: 25,
-                                      decoration: BoxDecoration(
-                                        color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                        borderRadius: BorderRadius.circular(20),
-                                      ),
-                                      child: Container(
-                                        decoration: BoxDecoration(),
-                                        child: Container(
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: 5, vertical: 6),
-                                          child: FaIcon(
-                                            FontAwesomeIcons.heart,
-                                            color: const Color.fromARGB(
-                                                255, 12, 12, 12),
-                                            size: 15,
-                                          ),
-                                        ),
-                                      ))
-                                ]),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 4),
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: const Color.fromARGB(
-                                            255, 23, 22, 23),
-                                        borderRadius: BorderRadius.only(
-                                          // topLeft: Radius.circular(10),
-                                          topRight: Radius.circular(12),
-                                          bottomRight: Radius.circular(12),
-                                        ),
-                                      ),
-                                      child: Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            vertical: 7, horizontal: 8),
-                                        child: Container(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                "Top restaurant",
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
                   ),
                 ],
               ),
