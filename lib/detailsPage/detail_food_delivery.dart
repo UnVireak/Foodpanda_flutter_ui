@@ -79,11 +79,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
     ];
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.pink,
         automaticallyImplyLeading: false,
         elevation: 0,
         leading: BackButton(
-          color: Colors.pink,
+          color: const Color.fromARGB(255, 255, 255, 255),
           onPressed: () {
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (context) => HomeScreen()));
@@ -96,13 +96,13 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
             Text(
               "Selected location",
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
             Text(
               "Food delivery",
-              style: TextStyle(color: Colors.black, fontSize: 15),
+              style: TextStyle(color: Colors.white, fontSize: 15),
             ),
           ],
         ),
@@ -110,8 +110,10 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: FaIcon(FontAwesomeIcons.heart, color: Colors.pink,),
-            
+            icon: FaIcon(
+              FontAwesomeIcons.heart,
+              color: Colors.pink,
+            ),
           ),
           IconButton(
             onPressed: () {},
@@ -134,8 +136,9 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
             automaticallyImplyLeading: false,
             expandedHeight: 75.5,
             excludeHeaderSemantics: true,
-
-            flexibleSpace: FlexibleSpaceBar(background: MyFlexiableAppBar_detail_screen()),
+            backgroundColor: Colors.pink,
+            flexibleSpace:
+                FlexibleSpaceBar(background: MyFlexiableAppBar_detail_screen()),
             // backgroundColor: Color.fromARGB(255, 245, 9, 87),
           ),
           SliverToBoxAdapter(
@@ -338,9 +341,12 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                                                           3,
                                                                       vertical:
                                                                           3),
-                                                              child: Icon(
-                                                                  Icons
-                                                                      .heart_broken_sharp,
+                                                              child:FaIcon(
+                                            FontAwesomeIcons.heart,
+                                            // color: const Color.fromARGB(
+                                            //     255, 12, 12, 12),
+                                            // size: 15,
+                                          
                                                                   color: (click ==
                                                                           false)
                                                                       ? Colors
@@ -464,9 +470,15 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  Icon(
-                                                    Icons.timer,
-                                                    color: Color(0xff707070),
+                                                  // Icon(
+                                                  //   Icons.timer,
+                                                  //   color: Color(0xff707070),
+                                                  // ),
+                                                  FaIcon(
+                                                    FontAwesomeIcons.clock,
+                                                    color: const Color.fromARGB(
+                                                        255, 12, 12, 12),
+                                                    size: 15,
                                                   ),
                                                   Text(
                                                     ' 30 min • ',
@@ -779,9 +791,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  Icon(
-                                                    Icons.timer,
-                                                    color: Color(0xff707070),
+                                                  FaIcon(
+                                                    FontAwesomeIcons.clock,
+                                                    color: const Color.fromARGB(
+                                                        255, 12, 12, 12),
+                                                    size: 15,
                                                   ),
                                                   Text(
                                                     ' 30 min • ',
@@ -1094,9 +1108,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  Icon(
-                                                    Icons.timer,
-                                                    color: Color(0xff707070),
+                                                  FaIcon(
+                                                    FontAwesomeIcons.clock,
+                                                    color: const Color.fromARGB(
+                                                        255, 12, 12, 12),
+                                                    size: 15,
                                                   ),
                                                   Text(
                                                     ' 30 min • ',
@@ -1472,9 +1488,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  Icon(
-                                                    Icons.timer,
-                                                    color: Color(0xff707070),
+                                                  FaIcon(
+                                                    FontAwesomeIcons.clock,
+                                                    color: const Color.fromARGB(
+                                                        255, 12, 12, 12),
+                                                    size: 15,
                                                   ),
                                                   Text(
                                                     ' 30 min • ',
@@ -1791,9 +1809,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  Icon(
-                                                    Icons.timer,
-                                                    color: Color(0xff707070),
+                                                  FaIcon(
+                                                    FontAwesomeIcons.clock,
+                                                    color: const Color.fromARGB(
+                                                        255, 12, 12, 12),
+                                                    size: 15,
                                                   ),
                                                   Text(
                                                     ' 30 min • ',
@@ -2171,9 +2191,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  Icon(
-                                                    Icons.timer,
-                                                    color: Color(0xff707070),
+                                                  FaIcon(
+                                                    FontAwesomeIcons.clock,
+                                                    color: const Color.fromARGB(
+                                                        255, 12, 12, 12),
+                                                    size: 15,
                                                   ),
                                                   Text(
                                                     ' 30 min • ',
@@ -2596,9 +2618,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  Icon(
-                                                    Icons.timer,
-                                                    color: Color(0xff707070),
+                                                  FaIcon(
+                                                    FontAwesomeIcons.clock,
+                                                    color: const Color.fromARGB(
+                                                        255, 12, 12, 12),
+                                                    size: 15,
                                                   ),
                                                   Text(
                                                     ' 30 min • ',
@@ -2915,9 +2939,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  Icon(
-                                                    Icons.timer,
-                                                    color: Color(0xff707070),
+                                                  FaIcon(
+                                                    FontAwesomeIcons.clock,
+                                                    color: const Color.fromARGB(
+                                                        255, 12, 12, 12),
+                                                    size: 15,
                                                   ),
                                                   Text(
                                                     ' 30 min • ',
@@ -3295,9 +3321,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  Icon(
-                                                    Icons.timer,
-                                                    color: Color(0xff707070),
+                                                  FaIcon(
+                                                    FontAwesomeIcons.clock,
+                                                    color: const Color.fromARGB(
+                                                        255, 12, 12, 12),
+                                                    size: 15,
                                                   ),
                                                   Text(
                                                     ' 30 min • ',
@@ -3571,9 +3599,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    Icons.timer,
-                                    color: Color(0xff707070),
+                                  FaIcon(
+                                    FontAwesomeIcons.clock,
+                                    color:
+                                        const Color.fromARGB(255, 12, 12, 12),
+                                    size: 15,
                                   ),
                                   Text(
                                     ' 30 min • ',
@@ -3812,9 +3842,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    Icons.timer,
-                                    color: Color(0xff707070),
+                                  FaIcon(
+                                    FontAwesomeIcons.clock,
+                                    color:
+                                        const Color.fromARGB(255, 12, 12, 12),
+                                    size: 15,
                                   ),
                                   Text(
                                     ' 30 min • ',
@@ -4022,9 +4054,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    Icons.timer,
-                                    color: Color(0xff707070),
+                                  FaIcon(
+                                    FontAwesomeIcons.clock,
+                                    color:
+                                        const Color.fromARGB(255, 12, 12, 12),
+                                    size: 15,
                                   ),
                                   Text(
                                     ' 30 min • ',
@@ -4263,9 +4297,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    Icons.timer,
-                                    color: Color(0xff707070),
+                                  FaIcon(
+                                    FontAwesomeIcons.clock,
+                                    color:
+                                        const Color.fromARGB(255, 12, 12, 12),
+                                    size: 15,
                                   ),
                                   Text(
                                     ' 30 min • ',
@@ -4490,9 +4526,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    Icons.timer,
-                                    color: Color(0xff707070),
+                                  FaIcon(
+                                    FontAwesomeIcons.clock,
+                                    color:
+                                        const Color.fromARGB(255, 12, 12, 12),
+                                    size: 15,
                                   ),
                                   Text(
                                     ' 30 min • ',
@@ -4686,9 +4724,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    Icons.timer,
-                                    color: Color(0xff707070),
+                                  FaIcon(
+                                    FontAwesomeIcons.clock,
+                                    color:
+                                        const Color.fromARGB(255, 12, 12, 12),
+                                    size: 15,
                                   ),
                                   Text(
                                     ' 30 min • ',
@@ -4910,9 +4950,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    Icons.timer,
-                                    color: Color(0xff707070),
+                                  FaIcon(
+                                    FontAwesomeIcons.clock,
+                                    color:
+                                        const Color.fromARGB(255, 12, 12, 12),
+                                    size: 15,
                                   ),
                                   Text(
                                     ' 30 min • ',
@@ -5134,9 +5176,11 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    Icons.timer,
-                                    color: Color(0xff707070),
+                                  FaIcon(
+                                    FontAwesomeIcons.clock,
+                                    color:
+                                        const Color.fromARGB(255, 12, 12, 12),
+                                    size: 15,
                                   ),
                                   Text(
                                     ' 30 min • ',
@@ -5344,7 +5388,7 @@ class MenubarRestaurant extends StatelessWidget {
   }
 }
 
-List<String> options = ['Relevance (default)', 'Fast delivery','Distance'];
+List<String> options = ['Relevance (default)', 'Fast delivery', 'Distance'];
 
 class MenuRetaurants extends StatefulWidget {
   String title;
@@ -5390,21 +5434,20 @@ class _MenuRetaurantsState extends State<MenuRetaurants> {
                     padding: const EdgeInsets.symmetric(horizontal: 30),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      
                       children: [
                         Text('Relevance (default)',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 18)),
                         Radio(
-                            value: options[0],
-                            groupValue: currentOption,
-                            onChanged: (value) {
-                              setState(() {
-                                currentOption = value.toString();
-                              });
-                            },
-                            activeColor: Colors.pink,
-                            ),
+                          value: options[0],
+                          groupValue: currentOption,
+                          onChanged: (value) {
+                            setState(() {
+                              currentOption = value.toString();
+                            });
+                          },
+                          activeColor: Colors.pink,
+                        ),
                       ],
                     ),
                   ),
@@ -5412,35 +5455,27 @@ class _MenuRetaurantsState extends State<MenuRetaurants> {
                     padding: const EdgeInsets.symmetric(horizontal: 30),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      
                       children: [
-                        Text('Fast delivery',
-                            style: TextStyle(
-                                 fontSize: 18)),
+                        Text('Fast delivery', style: TextStyle(fontSize: 18)),
                         Radio(
-                            value: options[1],
-                            groupValue: currentOption,
-                            onChanged: (value) {
-                              setState(() {
-                                currentOption = value.toString();
-                              });
-                            },
-                            
-                            ),
+                          value: options[1],
+                          groupValue: currentOption,
+                          onChanged: (value) {
+                            setState(() {
+                              currentOption = value.toString();
+                            });
+                          },
+                        ),
                       ],
                     ),
                   ),
-                   Padding(
+                  Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 30),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      
                       children: [
-                        Text('Distance',
-                            style: TextStyle(
-                                 fontSize: 18)),
+                        Text('Distance', style: TextStyle(fontSize: 18)),
                         Radio(
-                            
                             value: options[2],
                             groupValue: currentOption,
                             onChanged: (value) {
@@ -5451,20 +5486,31 @@ class _MenuRetaurantsState extends State<MenuRetaurants> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Container(
                     width: 400,
                     height: 1,
                     color: Color.fromARGB(224, 203, 201, 201),
                   ),
-                  SizedBox(height: 26,),
+                  SizedBox(
+                    height: 26,
+                  ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Container(
                       width: 350,
                       height: 60,
                       color: Colors.pink,
-                      child: Center(child: const Text('Apply', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),)),
+                      child: Center(
+                          child: const Text(
+                        'Apply',
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      )),
                     ),
                   )
                 ]),
