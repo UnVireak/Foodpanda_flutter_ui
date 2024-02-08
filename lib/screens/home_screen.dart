@@ -177,11 +177,12 @@ class HomeScreen extends StatelessWidget {
             onPressed: () {},
             icon: FaIcon(
               FontAwesomeIcons.heart,
+              color:Colors.white
             ),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.shopping_bag_outlined),
+            icon: Icon(Icons.shopping_bag_outlined,color: Colors.white,),
           ),
         ],
       ),
